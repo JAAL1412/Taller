@@ -1,6 +1,6 @@
 @extends('Layout/plantilla')
 
-@section('Tallermrmecanico', 'Crud con Laravel 8')
+@section('titulo', 'Inicio de sesión')
 
 @section('contenido')
 <div class="row">
