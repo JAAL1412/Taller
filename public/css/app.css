@@ -1,4 +1,9 @@
-body{
-    background-color: red;
-    color: #ffff;
+.bo{
+    background-image: url(./img/personal.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+.ncol:hover{
+    color: #ffc107;
+    background-color: #2c0c00;;
 }
