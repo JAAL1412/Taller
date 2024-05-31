@@ -19,18 +19,34 @@
            <h2>Taller Mister Mecánico</h2>
             </a> 
         </div>
-        <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
-        <a href=" "class="navbar-brand ncol">
-               Proveedores
+        <style>
+            .bo{
+
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .ncol{
+                padding: 10px;
+                padding-top: 5px;
+                color:#2c0c00;
+                border-radius:10px; 
+                border:#2c0c00 2px solid;
+                height: 50px;
+            }
+            .ncol:hover{
+                color:#ffc107;  
+                background-color: #2c0c00;;
+            }
+        </style>
+        <div class="collapse navbar-collapse  d-flex" id="navbarSupportedContent">
+        <a href=" "class=" navbar-brand ncol">
+               Formulario
             </a>
         <a href=" "class="navbar-brand ncol" >
-               Clientes
+               Entrada y salida
             </a>
         <a href="" class="navbar-brand ncol">
-                Medicinas
-            </a>
-        <a href="" class="navbar-brand" style="color:#2c0c00; border-radius:10px; border:#2c0c00 2px solid">
-                Registro
+                Buscar
             </a>
         </div>
     </nav>
