@@ -4,13 +4,19 @@
     background-size: cover;
    }
    .container{
-    background-color: white;
+    background-color: rgb(44, 12, 0, .90);
     margin-top: 30px;
     margin-bottom: 50px;
-    width: 60%;
+    width: 30%;
     padding: 20px;
+
     }
-.form1{
-    padding: 30px;
-    background-color: white;
-}
+    .title{
+        text-align: center;
+        color: #ffc107;
+
+    }
+    .form-label{
+        color: #ffc107;
+    }
+   
