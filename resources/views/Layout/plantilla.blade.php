@@ -15,7 +15,7 @@
   <header>
     <nav class="navbar navbar-expand-lg bg-warning" >
     <div class=" container-fluid con1 " >
-        <a href="#" class="navbar-brand" style="color:#2c0c00;">
+        <a href="#" class="navbar-brand" >
            <h2>Taller Mister Mecánico</h2>
             </a> 
         </div>
@@ -27,28 +27,30 @@
             }
             .ncol{
                 padding: 10px;
-                padding-top: 5px;
                 color:#2c0c00;
                 border-radius:10px; 
                 border:#2c0c00 2px solid;
-                height: 50px;
+                font-size: 5mm;
+                margin: 10px;
             }
             .ncol:hover{
                 color:#ffc107;  
                 background-color: #2c0c00;;
             }
         </style>
+        @if($mensajes= Session::get('succes'))
         <div class="collapse navbar-collapse  d-flex" id="navbarSupportedContent">
-        <a href=" "class=" navbar-brand ncol">
+        <a href="#"class=" nav-link ncol disabled" raia-disabled="true">
                Formulario
             </a>
-        <a href=" "class="navbar-brand ncol" >
-               Entrada y salida
+        <a href=" "class="nav-link ncol disabled" raia-disabled="true">
+               Historial
             </a>
-        <a href="" class="navbar-brand ncol">
+        <a href="#" class="nav-link ncol disabled">
                 Buscar
             </a>
         </div>
+        @endif
     </nav>
 </header>
     .<div class="container">
@@ -62,9 +64,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
-  </body>
+    <script src="./js/dios.js"></script>
+
+    </body>
 </html>
