@@ -43,7 +43,7 @@
 			</div>	
 			<div class="try" >
 				<label for="" class="form-label">Contraseña</label>	
-				<input type="text" name="Contra" class="form-control"required>
+				<input type="password" name="Contra" class="form-control"required>
 			</div>	
 			<button class="btn" type="submit">Entrar</button>
 		</form>
