@@ -19,6 +19,7 @@ return new class extends Migration
             $table->time('hentrada');
             $table->time('hsalida');
             $table->timestamps();
+            $table->foreign('placav')->references('placa')->on('vehiculos');
         });
     }
 

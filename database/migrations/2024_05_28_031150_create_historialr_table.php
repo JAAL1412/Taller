@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('historialr', function (Blueprint $table) {
             $table->id();
-            $table->string('idhistorial');
+            $table->unsignedBigInteger('idhistorial');
             $table->string('reparacion');
-            $table->string('idtransaccion');
+            $table->unsignedBigInteger('idtransaccion');
             $table->string('comentario');
             $table->timestamps();
+            $table->foreign('idhistorial')->references('id')->on('historialesv');
+            $table->foreign('idtransaccion')->references('id')->on('transacciones');
         });
     }
 

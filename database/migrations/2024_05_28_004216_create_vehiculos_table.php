@@ -18,8 +18,9 @@ return new class extends Migration
             $table->integer('fecha_fabri');
             $table->string('pais');
             $table->string('color');
-            $table->integer('dueño');
+            $table->unsignedBigInteger('dueño');
             $table->timestamps();
+            $table-> foreign('dueño')->references('id')->on('clientes');
         });
     }
 
