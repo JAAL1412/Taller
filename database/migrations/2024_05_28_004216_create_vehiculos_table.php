@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('vehiculos', function (Blueprint $table) {
             $table->id()->primary();
             $table->string('placa')->unique();
-            $table->string('moddelo');
-            $table->integer('fecha_fabri');
+            $table->string('modelo');
+            $table->date('fecha_fabri');
             $table->string('pais');
             $table->string('color');
             $table->unsignedBigInteger('dueño');

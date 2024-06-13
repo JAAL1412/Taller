@@ -1,16 +1,16 @@
+
 .bo{
     background-image: url(./img/personal.jpg);
     background-repeat: no-repeat;
     background-size: cover;
    }
-   .container{
+.container{
     background-color: rgb(44, 12, 0, .90);
     margin-top: 30px;
     margin-bottom: 50px;
- 
     padding: 20px;
     }
-    .title{
+.title{
         text-align: center;
         color: #ffc107;
 
@@ -29,3 +29,19 @@
         color:#ffc107;
         border: 1mm solid #2c0c00;
     }
+.btn{
+        margin: 10px;
+        background-color: #ffc107;
+        color:#2c0c00 ;
+        border: 1mm solid #2c0c00;
+    } 
+.btn:hover{
+        margin: 10px;
+        background-color: #2c0c00;
+        color:#ffc107;
+        border: 1mm solid #2c0c00;
+    }
+.input-group-text{
+        background-color: transparent;
+        border-color:transparent;
+}

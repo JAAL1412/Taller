@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('placav');
             $table->date('ingreso');
             $table->date('salida');
-            $table->time('hentrada');
-            $table->time('hsalida');
+            $table->timestamp('hentrada');
+            $table->timestamp('hsalida');
             $table->timestamps();
             $table->foreign('placav')->references('placa')->on('vehiculos');
         });

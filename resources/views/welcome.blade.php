@@ -1,7 +1,5 @@
 @extends('Layout/plantilla')
-
 @section('titulo', 'Inicio de sesión')
-
 @section('contenido')
 <style>
 .form-control{
