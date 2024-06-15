@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('transacciones', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cliente');
             $table->date('fechatransa');
             $table->integer('monto');
             $table->string('concepto');
             $table->string('comentario');
             $table->timestamps();
-            $table->foreign('cliente')->references('id')->on('clientes');
         });
     }
 

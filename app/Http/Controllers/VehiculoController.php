@@ -21,8 +21,9 @@ class VehiculoController extends Controller
         if($f==1 and $request->post('search')!=null){
             $x=true;
             $xd= $request->post('search');
-            $datos=DB::select("SELECT placa, vehiculos.id as vid, nombre, color, moddelo FROM vehiculos, clientes where  clientes.id=vehiculos.dueño and placa='".$xd."' ");
-            $datoh=DB::select("SELECT ingreso, salida, hentrada, hsalida, id FROM historialesv Where placav='" .$xd."'");
+            $datos=DB::select("SELECT placa, vehiculos.id as vid, nombre,apellido, color, modelo FROM vehiculos, clientes where  clientes.id=vehiculos.dueño and placa='".$xd."' ");
+            $datoh=DB::select("SELECT ingreso, salida, historialesv.id, reparacion, monto, transacciones.comentario FROM historialesv, historialr, transacciones Where placav='" .$xd."'");
+            
             return view('busqueda', compact('datos'),compact('datoh'))->with('x', $x);
         }
         
@@ -47,12 +48,12 @@ class VehiculoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(vehiculo $vehiculo)
+    public function show($id)
     {
         /**$datos = DB::select('SELECT transacciones.id,titulo, tipo, nombre_medicina, monto, nombre_cliente, cantidad, transacciones.comentario, transacciones.created_at FROM clientes, medicinas, transacciones WHERE medicinas.id=transacciones.medicina AND clientes.id=transacciones.cliente');
         return view('tablaregistro', compact('datos'));*/
-        $datos = vehiculo:: all();
-        return view('', compact('datos'));
+        $datos = vehiculo::find($id);
+        return view('dimas', compact('datos'));
 
     }
 

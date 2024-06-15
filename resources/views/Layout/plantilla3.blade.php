@@ -7,17 +7,31 @@
     <link rel="stylesheet" href="./css/app.css" type="text/css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
     <title>@yield('titulo')</title>
   </head>
-  <body class="bo">
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-        *{
-            font-family: "Poppins", sans-serif;
-        }
-        .navb{
+  <body class="bo2">
+  <header>
+    <nav class="navbar navbar-expand-lg bg-warning" >
+    <div class=" container-fluid con1 " >
+        <a href="#" class="navbar-brand" >
+           <h2>Taller Mister Mecánico</h2>
+            </a> 
+        </div>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+            *{
+                font-family: "Poppins", sans-serif;
+            }
+            .container{
+                background-color: #2c0c00;
+            }
+            .bo2{
+            background-color:#ffc107;  
+
+            }
+            .navb{
             padding: 10px;
             color:#2c0c00;
             border-radius:10px; 
@@ -29,7 +43,7 @@
             color:#ffc107;  
             background-color: #2c0c00;;
         }
-        .form-control{
+            .form-control{
             background-color: transparent;
             border:1px solid #ffc107;
             color: #ffc107;
@@ -41,19 +55,23 @@
             background-color:transparent;
             border:2px solid #ffc107;
         }
-        
+        .input-group-text{
+            background-color: transparent;
+            border-color: transparent;
+        }
+        .btn{
+        margin: 10px;
+        background-color: #ffc107;
+        color:#2c0c00 ;
+        border: 1mm solid #2c0c00;
+    }
+.btn:hover{
+        margin: 10px;
+        background-color: #2c0c00;
+        color:#ffc107;
+        border: 1mm solid #2c0c00;
+    }
         </style>
-
-
-  <header>
-    <nav class="navbar navbar-expand-lg bg-warning" >
-    <div class=" container-fluid con1 " >
-        <a href="#" class="navbar-brand" >
-           <h2>Taller Mister Mecánico</h2>
-            </a> 
-        </div>
-        
-        @if($mensajes= Session::get('succes'))
         <div class="collapse navbar-collapse  d-flex" id="navbarSupportedContent">
         <a href="{{route('clie.index')}}"class=" nav-link navb" >
                Formulario
@@ -61,17 +79,16 @@
         <a href="{{route('hist1.index')}}"class="nav-link navb">
                Historial
             </a>
-        <form action="{{route('vehiculo.index')}}" method="POST">
+            <form action="{{route('vehiculo.index')}}" method="POST">
             @csrf
             <button class="btn" type="submit" value=0 name="bt" style="height: 50px; border:solid #2c0c00 2px; font-size:5mm;" >Buscar</button>
-        </form>
+            </form>
         </div>
-        @endif
     </nav>
 </header>
-    .<div class="container">
+    .<section class="container col-md-7">
         @yield('contenido')
-    </div>
+</section>
 
 
     <!-- Optional JavaScript; choose one of the two! -->

@@ -14,10 +14,8 @@ return new class extends Migration
         Schema::create('historialesv', function (Blueprint $table) {
             $table->id();
             $table->string('placav');
-            $table->date('ingreso');
-            $table->date('salida');
-            $table->timestamp('hentrada');
-            $table->timestamp('hsalida');
+            $table->datetime('ingreso');
+            $table->datetime('salida');
             $table->timestamps();
             $table->foreign('placav')->references('placa')->on('vehiculos');
         });
