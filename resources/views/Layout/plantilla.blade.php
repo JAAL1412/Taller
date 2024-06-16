@@ -59,7 +59,7 @@
                Formulario
             </a>
         <a href="{{route('hist1.index')}}"class="nav-link navb">
-               Historial
+               Editar
             </a>
         <form action="{{route('vehiculo.index')}}" method="POST">
             @csrf
