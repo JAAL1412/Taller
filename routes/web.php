@@ -12,8 +12,9 @@ Route::get('/', [UserController::class, 'index'])->name('Users.index');
 Route::post('/', [UserController::class, 'verifica'])->name('Users.verifica');
 
 Route::post('/busca', [vehiculoController::class, 'index'])->name('vehiculo.index');
+Route::get('/busca', [vehiculoController::class, 'index2'])->name('vehiculo.index2');
 Route::get('/busca/edit/{id}', [vehiculoController::class, 'show'])->name('vehiculo.edit');
-
+Route::post('/busca/edit/{id}', [vehiculoController::class, 'update'])->name('vehiculo.up');
 Route::get('/editar', [histrialvController::class, 'index'])->name('hist1.index');
 
 Route::get('/formularios', [ClienteController::class, 'index'])->name('clie.index');

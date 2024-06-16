@@ -17,7 +17,7 @@ return new class extends Migration
             $table->datetime('ingreso');
             $table->datetime('salida');
             $table->timestamps();
-            $table->foreign('placav')->references('placa')->on('vehiculos');
+            $table->foreign('placav')->references('placa')->on('vehiculos')->onUpdate('CASCADE');
         });
     }
 

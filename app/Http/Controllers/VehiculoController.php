@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\vehiculo;
+use App\Models\cliente;
+use App\Models\histrialv;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class VehiculoController extends Controller
@@ -29,6 +31,12 @@ class VehiculoController extends Controller
         
     }
 
+    public function index2(Request $request)
+    {
+            $x=false;
+            return view('busqueda', compact('x'));
+        
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -50,10 +58,11 @@ class VehiculoController extends Controller
      */
     public function show($id)
     {
-        /**$datos = DB::select('SELECT transacciones.id,titulo, tipo, nombre_medicina, monto, nombre_cliente, cantidad, transacciones.comentario, transacciones.created_at FROM clientes, medicinas, transacciones WHERE medicinas.id=transacciones.medicina AND clientes.id=transacciones.cliente');
-        return view('tablaregistro', compact('datos'));*/
-        $datos = vehiculo::find($id);
-        return view('dimas', compact('datos'));
+        $datos= vehiculo::find($id);
+        $did= $datos->dueño;
+        $dueño= cliente::find($did);
+        $dueños= DB::select("SELECT * FROM clientes");
+        return view('dimas', compact('datos'), compact('dueños'))->with('dueño', $dueño);
 
     }
 
@@ -68,16 +77,17 @@ class VehiculoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, vehiculo $vehiculo)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(vehiculo $vehiculo)
-    {
-        //
+    public function update(Request $request, $id)
+    { 
+        $x=false;
+        $datos = vehiculo:: find($id);
+        $datos->placa = $request->post('placa');
+        $datos->modelo= $request->post('modelo');
+        $datos->fecha_fabri = $request->post('año');
+        $datos->pais= $request->post('pais');
+        $datos->color= $request->post('color');
+        $datos->dueño=$request->post('dueño');
+        $datos->save();
+        return view('busqueda')->with('x', $x);
     }
 }

@@ -6,7 +6,6 @@
       align-items: center;
       text-align: center;
     }
- 
 </style>
 <form action="{{route('vehiculo.index')}}" method="POST">
 		@csrf

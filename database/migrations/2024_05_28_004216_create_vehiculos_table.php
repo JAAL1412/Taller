@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('color');
             $table->unsignedBigInteger('dueño');
             $table->timestamps();
-            $table-> foreign('dueño')->references('id')->on('clientes');
+            $table-> foreign('dueño')->references('id')->on('clientes')->onUpdate('CASCADE');
         });
     }
 

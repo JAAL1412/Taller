@@ -12,7 +12,7 @@ class HistrialvController extends Controller
      */
     public function index()
     {
-        return view('dimas');
+        return view('historial');
     }
 
     /**
