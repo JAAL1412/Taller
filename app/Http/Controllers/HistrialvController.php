@@ -11,8 +11,7 @@ class HistrialvController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        $historial 
+    { 
         return view('historial');
     }
 
