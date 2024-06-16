@@ -1,85 +1,7 @@
-
-
-*{
-
-margin:0;
-padding:0;
-box-sizing: border-box;
-
-
-}
-
-.cuerpo{
-
-  background-image: url(./img/fondo.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 1800px;
-  
-
-   color: white;
-   font-family: 'Times New Roman', Times, serif;
-   overflow: hidden;
-
-
-}
-
-.table{
-
-   width: 100%;
-   
-}
-
-.table_header{
-
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 20px;
-
-background-color: rgb(0, 0, 0);
-
-
-
-}
-
-
-.table_header p{
-
-   color:#fffbfb;
-  
-
-
-}
-
-
-#boton {
-  
-   color:aliceblue;
-   background-color: rgba(237, 225, 5, 0.776);
-   border-radius: 6px;
-   outline: none;
-   border:none;
-   cursor: pointer;
-   
-
-}
-
-::placeholder{
-   color: rgba(0, 0, 0, 0.591);
-}
-
-
 .table_section{
    height: 700px;
    overflow:auto;
    margin-top: 5%;
-   border-top: solid 3px rgba(214, 214, 4, 0.804);
- 
-
-   
 }
 
 table{
@@ -87,11 +9,6 @@ table{
    table-layout: fixed;
    min-width: 1000px;
    border-collapse: collapse;
-   border-bottom: solid 3px rgba(214, 214, 4, 0.804);
-  
-  
-   
-   
 }
 
 thead th
@@ -99,69 +16,11 @@ thead th
 position: sticky;
 top: 0;
 background-color: rgba(0, 0, 0, 0.893);
-color: rgb(255, 255, 254);
+color: #ffc107;
 font-size: 15px;
 padding: 10px 20px;
 word-break: break-all;
 text-align: center;
-
-
-
-
-}
-
-tr:hover td{
-
-color: rgba(197, 197, 4, 0.804);
-cursor: pointer;
-background-color:rgba(0, 0, 0, 0.893);
-
-
-
-}
-
-td, th {
-   
-   border-bottom: 1px solid rgba(206, 196, 4, 0.895);
-   border: solid 12px;
-   word-break: break-all;
-   text-align: center;
-   
-}
-
-
-
-.button{
-
-   padding: 1px 5px;
-   color: aliceblue;
-
-}
-
-td button:nth-child(1){
-   background-color:rgba(206, 196, 4, 0.895); 
-}
-
-td button:nth-child(2){
-   background-color:rgba(199, 3, 3, 0.772); 
-}
-
-
-::-webkit-scrollbar{
-
-   height: 5px;
-   width: 5px;
-
-}
-
-::-webkit-scrollbar-track{
-
-   box-shadow: insert 0 0 6px rgba(0,0,0,0.3 );
-
-}
-
-::-webkit-scrollbar-thumb{
-   box-shadow: insert 0 0 6px rgba(0,0,0,0.3 ); 
 }
 
 

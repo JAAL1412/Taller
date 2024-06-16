@@ -30,19 +30,18 @@ class VehiculoController extends Controller
         }
         
     }
-
-    public function index2(Request $request)
-    {
-            $x=false;
-            return view('busqueda', compact('x'));
-        
-    }
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-
+        $vehiculo = new vehiculo;
+        $vehiculo->placa = $request->post('placa');
+        $vehiculo->modelo = $request->post('modelo');
+        $vehiculo->fecha_fabri = $request->post('fecha_fabri');
+        $vehiculo->pais = $request->post('pais');
+        $vehiculo->color = $request->post('color');
+        $vehiculo->save();
     }
 
     /**
@@ -65,18 +64,10 @@ class VehiculoController extends Controller
         return view('dimas', compact('datos'), compact('dueños'))->with('dueño', $dueño);
 
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(vehiculo $vehiculo)
     {
-        //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, $id)
     { 
         $x=false;
