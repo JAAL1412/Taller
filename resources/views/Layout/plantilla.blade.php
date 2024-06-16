@@ -59,8 +59,11 @@
                Formulario
             </a>
         <a href="{{route('hist1.index')}}"class="nav-link navb">
-               Editar
-            </a>
+            Editar
+        </a>
+        <a href="{{route('Cliente.index')}}"class="nav-link navb">
+            Clientes
+        </a>
         <form action="{{route('vehiculo.index')}}" method="POST">
             @csrf
             <button class="btn" type="submit" value=0 name="bt" style="height: 50px; border:solid #2c0c00 2px; font-size:5mm;" >Buscar</button>

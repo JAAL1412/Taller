@@ -12,7 +12,7 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        return view('anggelo');
+        return view('clientes');
     }
 
     /**
@@ -28,7 +28,20 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cliente = new cliente;
+        $cliente->nombre = $request->post('nombre');
+        $cliente->apellido = $request->post('apellido');
+        $cliente->documento = $request->post('documento');
+        $cliente->fecha_nacimiento = $request->post('fecha_nacimiento');
+        $cliente->direccion = $request->post('direccion');
+        $cliente->telefono= $request->post('telefono');
+        $cliente->correo= $request->post('correo');
+        $cliente->comentario= $request->post('comentario');
+        $cliente->save();
+        
+        return view('clientes');
+
+
     }
 
     /**

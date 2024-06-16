@@ -22,6 +22,8 @@ Route::get('/formularios', [vehiculoController::class, 'create'])->name('clie.in
 Route::post('/vehiculo/store', [vehiculoController::class, 'store'])->name('vehiculo.add');
 
 Route::get('/editar', [histrialvController::class, 'index'])->name('hist1.index');
+Route::get('/', [ClienteController::class, 'index'])->name('Cliente.index');
+Route::post('/cliente/store', [ClienteController::class, 'store'])->name('Cliente.add');
 
 
 
