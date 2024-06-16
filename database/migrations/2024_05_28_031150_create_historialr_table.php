@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('historialr', function (Blueprint $table) {
+        Schema::create('historialrs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('idhistorial');
             $table->string('reparacion');

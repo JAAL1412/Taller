@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\vehiculo;
 use App\Models\cliente;
-use App\Models\histrialv;
+use App\Models\histrialesv;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class VehiculoController extends Controller
@@ -24,7 +24,7 @@ class VehiculoController extends Controller
             $x=true;
             $xd= $request->post('search');
             $datos=DB::select("SELECT placa, vehiculos.id as vid, nombre,apellido, color, modelo FROM vehiculos, clientes where  clientes.id=vehiculos.dueño and placa='".$xd."' ");
-            $datoh=DB::select("SELECT ingreso, salida, historialesv.id, reparacion, monto, transacciones.comentario FROM historialesv, historialr, transacciones Where placav='" .$xd."'");
+            $datoh=DB::select("SELECT ingreso, salida, historialesvs.id, reparacion, monto, transacciones.comentario FROM historialesvs, historialr, transacciones Where placav='" .$xd."'");
             
             return view('busqueda', compact('datos'),compact('datoh'))->with('x', $x);
         }
@@ -55,7 +55,7 @@ class VehiculoController extends Controller
 
         $x=true;
         $datos=DB::select("SELECT placa, vehiculos.id as vid, nombre,apellido, color, modelo FROM vehiculos, clientes where  clientes.id=vehiculos.dueño and placa='".$vehiculo->placa."' ");
-        $datoh=DB::select("SELECT ingreso, salida, historialesv.id, reparacion, monto, transacciones.comentario FROM historialesv, historialr, transacciones Where placav='" .$vehiculo->placa."'");
+        $datoh=DB::select("SELECT ingreso, salida, historialesvs.id, reparacion, monto, transacciones.comentario FROM historialesvs, historialr, transacciones Where placav='" .$vehiculo->placa."'");
             
         return view('busqueda', compact('datos'),compact('datoh'))->with('x', $x);
 

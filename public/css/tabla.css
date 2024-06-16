@@ -5,9 +5,11 @@
 }
 
 table{
+   overflow: hidden;
+   border-radius: 10px;
    width: 100%;
+   color: #ffc107;
    table-layout: fixed;
-   min-width: 1000px;
    border-collapse: collapse;
 }
 
@@ -15,13 +17,25 @@ thead th
 {
 position: sticky;
 top: 0;
-background-color: rgba(0, 0, 0, 0.893);
-color: #ffc107;
+background-color: black;
 font-size: 15px;
 padding: 10px 20px;
 word-break: break-all;
 text-align: center;
 }
+   .t{
+   color: #ffc107 !important;
+   align-items: center;
+   text-align: center;
+   border-left: 1mm solid #ffc107 !important;
+   text-align: center;
+   background-color: black !important;
+   color:#ffc107;
+   border-bottom: black !important ;
+   }
+   tr{
+      border-left: transparent !important;
+   }
 
 
 

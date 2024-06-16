@@ -1,4 +1,4 @@
-@extends('Layout/plantilla3')
+@extends('Layout/plantilla2')
 @section('titulo', 'Editar')
 @section('contenido')
 <style>
