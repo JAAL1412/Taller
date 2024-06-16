@@ -1,12 +1,7 @@
 @extends('Layout/plantilla2')
 @section('titulo', 'Busqueda')
 @section('contenido')
-<style>
-    td,th{
-      align-items: center;
-      text-align: center;
-    }
-</style>
+
 <form action="{{route('vehiculo.index')}}" method="POST">
 		@csrf
         <div class="input-group-text mb-3">
@@ -16,25 +11,28 @@
 
 		</form>
     @if($x)
-        <table class="table">
+  </section>
+    <section class="container" style="background-color: transparent;">
+  <table class="table">
   <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Placa</th>
-      <th scope="col">Color</th>
-      <th scope="col">Modelo</th>
-      <th scope="col">Dueño</th>
+  <tr style="border-bottom: 1mm solid #ffc107;">
+      <th style="border-left: transparent !important;" class="t">ID</th>
+      <th scope="col" class="t">Placa</th>
+      <th scope="col" class="t">Color</th>
+      <th scope="col"class="t">Modelo</th>
+      <th scope="col" class="t">Dueño</th>
+      <th scope="col" class="t">Acción</th>
     </tr>
   </thead>
   <tbody>
   @foreach($datos as $item)
-    <tr>
-      <td>{{$item->vid}}</td>
-      <td>{{$item->placa}}</td>
-      <td>{{$item->color}}</td>
-      <td>{{$item->modelo}}</td>
-      <td>{{$item->nombre}} {{$item->apellido}}</td>
-      <td>
+    <tr style="border-left: transparent;">
+      <td style="border-left: transparent !important;" class="t">{{$item->vid}}</td>
+      <td class="t">{{$item->placa}}</td>
+      <td class="t">{{$item->color}}</td>
+      <td class="t">{{$item->modelo}}</td>
+      <td class="t">{{$item->nombre}} {{$item->apellido}}</td>
+      <td class="t">
       <form action="{{route('vehiculo.edit', $item->vid)}}" method="GET">
 			<button class="btn btn-warning btn-sm">
       <ion-icon name="create-outline"></ion-icon>
@@ -47,24 +45,26 @@
 </table>
 
 <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Ingreso</th>
-      <th scope="col">Salida</th>
-      <th scope="col">Descripción</th>
-    </tr>
-  </thead>
-  <h2 class="title">
+  <h2 class="title" style="border-radius: 10px; background-color:black">
     Historial
   </h2>
+   <thead>
+    <tr style="border-bottom: 1mm solid #ffc107;">
+    
+      <th scope="col" style="border-left: transparent !important;" class="t">Id</th>
+      <th scope="col" class="t">Ingreso</th>
+      <th scope="col" class="t">Salida</th>
+      <th scope="col" class="t">Descripción</th>
+    </tr>
+  </thead>
+ 
   <tbody>
   @foreach($datoh as $item1)
     <tr>
-      <td>{{$item1->id}}</td>
-      <td>{{$item1->ingreso}} </td>
-      <td>{{$item1->salida}}</td>
-      <td>
+      <td style="border-left: transparent !important;" class="t">{{$item1->id}}</td>
+      <td class="t">{{$item1->ingreso}} </td>
+      <td class="t">{{$item1->salida}}</td>
+      <td class="t">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">
         <ion-icon name="alert-outline"></ion-icon>
         </button>
@@ -72,15 +72,13 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-body">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" style="text-align: right;"></button>
                   <table class="table">
                     <thead>
                       <tr>
                         <th>Reparacion</th>
                         <th>monto</th>
                         <th>comentario</th>
-                        <th>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </th>
                       </tr>
                     </thead>
                     <tbody>

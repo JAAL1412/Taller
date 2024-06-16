@@ -73,7 +73,7 @@
     }
         </style>
         <div class="collapse navbar-collapse  d-flex" id="navbarSupportedContent">
-        <a href="{{route('clie.index')}}"class=" nav-link navb" >
+        <a href="{{route('form.index')}}"class=" nav-link navb" >
                Formulario
             </a>
         <a href="{{route('hist1.index')}}"class="nav-link navb">

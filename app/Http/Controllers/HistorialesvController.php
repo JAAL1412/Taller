@@ -2,17 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\histrialv;
+use App\Models\historialesv;
+use App\Models\historialr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class HistrialvController extends Controller
+class HistorialesvController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
+<<<<<<< HEAD:app/Http/Controllers/HistrialvController.php
     { 
         return view('historial');
+=======
+    {
+        $historial=DB::select("SELECT historialesvs.id, ingreso, salida, placav, reparacion, comentario from historialrs, historialesvs where idhistorial=historialesvs.id");
+        return view('historial', compact('historial'));
+>>>>>>> 6a9abe33e57ad7fadd0664537ea98ed63c4d8c3c:app/Http/Controllers/HistorialesvController.php
     }
 
     /**
@@ -34,7 +42,7 @@ class HistrialvController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(histrialv $histrialv)
+    public function show(historialesv $historialesv)
     {
         //
     }
@@ -42,7 +50,7 @@ class HistrialvController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(histrialv $histrialv)
+    public function edit(historialesv $historialesv)
     {
         //
     }
@@ -50,7 +58,7 @@ class HistrialvController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, histrialv $histrialv)
+    public function update(Request $request, historialesv $historialesv)
     {
         //
     }
@@ -58,7 +66,7 @@ class HistrialvController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(histrialv $histrialv)
+    public function destroy(historialesv $historialesv)
     {
         //
     }
