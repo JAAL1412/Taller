@@ -26,13 +26,14 @@
           <label class="form-label" name="pais">País</label>
           <input type="text" class="form-control" value="{{$datos->pais}}" name="pais" required />
           <br>
+          <label class="form-label">Dueño</label>
           <select class="form-select form-control" name="dueño">
             <option selected value="{{$datos->dueño}}">{{$dueño->nombre}}{{$dueño->apellido}}</option>
             @foreach($dueños as $item)
-            <option  >{{$item->nombre}}{{$item->apellido}}</option>
+            <option value="{{$item->id}}" >{{$item->nombre}}{{$item->apellido}}</option>
             @endforeach
             </select>
-          <button class="btn" type="submit" style="height: 50px; border:solid #2c0c00 2px; font-size:5mm;" >Buscar</button>
+          <button class="btn" type="submit" style="height: 50px; border:solid #2c0c00 2px; font-size:5mm;" >Editar</button>
             
       </form>
 </div>

@@ -12,6 +12,7 @@ class HistrialvController extends Controller
      */
     public function index()
     {
+        $historial 
         return view('historial');
     }
 

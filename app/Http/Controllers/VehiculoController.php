@@ -35,13 +35,8 @@ class VehiculoController extends Controller
      */
     public function create(Request $request)
     {
-        $vehiculo = new vehiculo;
-        $vehiculo->placa = $request->post('placa');
-        $vehiculo->modelo = $request->post('modelo');
-        $vehiculo->fecha_fabri = $request->post('fecha_fabri');
-        $vehiculo->pais = $request->post('pais');
-        $vehiculo->color = $request->post('color');
-        $vehiculo->save();
+        $dueños= DB::select("SELECT * FROM clientes");
+        return view('anggelo' , compact('dueños'));
     }
 
     /**
@@ -55,6 +50,7 @@ class VehiculoController extends Controller
         $vehiculo->fecha_fabri = $request->post('fecha_fabri');
         $vehiculo->pais = $request->post('pais');
         $vehiculo->color = $request->post('color');
+        $vehiculo->dueño= $request->post('dueño');
         $vehiculo->save();
 
         $x=true;
