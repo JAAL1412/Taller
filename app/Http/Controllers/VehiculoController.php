@@ -24,7 +24,7 @@ class VehiculoController extends Controller
             $x=true;
             $xd= $request->post('search');
             $datos=DB::select("SELECT placa, vehiculos.id as vid, nombre,apellido, color, modelo FROM vehiculos, clientes where  clientes.id=vehiculos.dueño and placa='".$xd."' ");
-            $datoh=DB::select("SELECT ingreso, salida, historialesvs.id, reparacion, monto, transacciones.comentario FROM historialesvs, historialr, transacciones Where placav='" .$xd."'");
+            $datoh=DB::select("SELECT ingreso, salida, historialesvs.id, reparacion, monto, transacciones.comentario FROM historialesvs, historialrs, transacciones Where placav='" .$xd."'");
             
             return view('busqueda', compact('datos'),compact('datoh'))->with('x', $x);
         }

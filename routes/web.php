@@ -21,7 +21,7 @@ Route::post('/busca/edit/{id}', [vehiculoController::class, 'update'])->name('ve
 Route::get('/formularios', [vehiculoController::class, 'create'])->name('form.index');
 Route::post('/vehiculo/store', [vehiculoController::class, 'store'])->name('vehiculo.add');
 
-Route::get('/editar', [histrialvController::class, 'index'])->name('hist1.index');
+Route::get('/editar', [HistorialesvController::class, 'index'])->name('hist1.index');
 Route::get('/', [ClienteController::class, 'index'])->name('Cliente.index');
 Route::post('/cliente/store', [ClienteController::class, 'store'])->name('Cliente.add');
 

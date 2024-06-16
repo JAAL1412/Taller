@@ -13,14 +13,9 @@ class HistorialesvController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-<<<<<<< HEAD:app/Http/Controllers/HistrialvController.php
-    { 
-        return view('historial');
-=======
     {
         $historial=DB::select("SELECT historialesvs.id, ingreso, salida, placav, reparacion, comentario from historialrs, historialesvs where idhistorial=historialesvs.id");
         return view('historial', compact('historial'));
->>>>>>> 6a9abe33e57ad7fadd0664537ea98ed63c4d8c3c:app/Http/Controllers/HistorialesvController.php
     }
 
     /**
