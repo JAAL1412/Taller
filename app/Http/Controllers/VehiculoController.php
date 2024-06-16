@@ -49,7 +49,20 @@ class VehiculoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $vehiculo = new vehiculo;
+        $vehiculo->placa = $request->post('placa');
+        $vehiculo->modelo = $request->post('modelo');
+        $vehiculo->fecha_fabri = $request->post('fecha_fabri');
+        $vehiculo->pais = $request->post('pais');
+        $vehiculo->color = $request->post('color');
+        $vehiculo->save();
+
+        $x=true;
+        $datos=DB::select("SELECT placa, vehiculos.id as vid, nombre,apellido, color, modelo FROM vehiculos, clientes where  clientes.id=vehiculos.dueño and placa='".$vehiculo->placa."' ");
+        $datoh=DB::select("SELECT ingreso, salida, historialesv.id, reparacion, monto, transacciones.comentario FROM historialesv, historialr, transacciones Where placav='" .$vehiculo->placa."'");
+            
+        return view('busqueda', compact('datos'),compact('datoh'))->with('x', $x);
+
     }
 
     /**
