@@ -18,11 +18,10 @@ return new class extends Migration
             $table->unsignedBigInteger('idtransaccion');
             $table->string('comentario');
             $table->timestamps();
-            $table->foreign('idhistorial')->references('id')->on('historialesv')->onUpdate('CASCADE');
-            $table->foreign('idtransaccion')->references('id')->on('transacciones')->onUpdate('CASCADE');
+            $table->foreign('idhistorial')->references('id')->on('historialesvs')->onUpdate('CASCADE');
+            $table->foreign('idtransaccion')->references('id')->on('transaccions')->onUpdate('CASCADE');
         });
     }
-
     /**
      * Reverse the migrations.
      */

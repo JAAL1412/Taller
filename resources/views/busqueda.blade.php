@@ -58,13 +58,6 @@
       <th scope="col" class="t">monto</th>
       <th scope="col" class="t">Comentario</th>
       <th scope="col" class="t">Acción</th>
-      <td class="t">
-      <form action="{{route('vehiculo.edit', $item->vid)}}" method="GET">
-			<button class="btn btn-warning btn-sm">
-      <ion-icon name="create-outline"></ion-icon>
-			</button>
-	  </form>
-      </td>
     </tr>
   </thead>
  
@@ -77,6 +70,11 @@
       <td class="t">{{$item1->reparacion}}</td>
       <td class="t">{{$item1->monto}}</td>
       <td class="t">{{$item1->comentario}}</td>
+      <td class="t"><form action="{{route('vehiculo.edit', $item->vid)}}" method="GET">
+			<button class="btn btn-warning btn-sm">
+      <ion-icon name="create-outline"></ion-icon>
+			</button>
+	  </form></td>
     </tr>
   @endforeach
   </tbody>
