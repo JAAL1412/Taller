@@ -62,9 +62,20 @@ class ClienteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, cliente $cliente)
+    public function update(Request $request)
     {
-        //
+        $id=$request->post('id');
+        DB::table('clientes')->where('id', $id)
+        ->update([
+            'nombre'=> $request->post('nombre'),
+            'apellido'=>$request->post('apellido'),
+            'documento'=>$request->post('documento'),
+            'direccion'=>$request->post('direccion'),
+            'telefono'=>$request->post('telefono'),
+            'correo'=>$request->post('correo'),
+            'comentario'=>$request->post('comentario')
+        ]);
+        return back();
     }
 
     /**
@@ -75,3 +86,4 @@ class ClienteController extends Controller
         //
     }
 }
+

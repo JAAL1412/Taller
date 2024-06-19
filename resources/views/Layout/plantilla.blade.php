@@ -57,10 +57,10 @@
         @if($mensajes= Session::get('succes'))
         <div class="collapse navbar-collapse  d-flex" id="navbarSupportedContent">
         <a href="{{route('form.index')}}"class=" nav-link navb" >
-               Formulario
+            Vehículos
             </a>
-        <a href="{{route('hist1.index')}}"class="nav-link navb">
-            Editar
+        <a href="{{route('historial.index')}}"class="nav-link navb">
+            Historial
         </a>
         <a href="{{route('Cliente.index')}}"class="nav-link navb">
             Clientes

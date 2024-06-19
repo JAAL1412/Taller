@@ -17,7 +17,8 @@ class HistorialesvController extends Controller
     public function index()
     {
         $vehiculos=vehiculo::all();
-        $historial=DB::select("SELECT historialesvs.id, ingreso, salida, placav, reparacion, comentario from historialrs, historialesvs where idhistorial=historialesvs.id ORDER BY historialesvs.id DESC");
+        $historial=DB::select("SELECT historialesvs.id, ingreso, salida, placav, reparacion, historialrs.comentario as comenta1, monto, concepto, transaccions.comentario as comenta2 from historialrs, historialesvs, transaccions where idhistorial=historialesvs.id and transaccions.id=idtransaccion ORDER BY historialesvs.id DESC");
+        
         return view('historial', compact('historial'), compact('vehiculos'));
     }
 

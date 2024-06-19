@@ -45,7 +45,7 @@
 </table>
 
 <table class="table">
-  <h2 class="title" style="border-radius: 10px; background-color:black">
+  <h2 class="title" style="border-radius: 10px; background-color:#2c0c00;">
     Historial
   </h2>
    <thead>

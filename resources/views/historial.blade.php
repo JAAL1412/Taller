@@ -59,7 +59,7 @@
             <td class="t">{{$item->ingreso}}</td>
             <td class="t">{{$item->salida}}</td>
             <td class="t">{{$item->reparacion}}</td>
-            <td class="t">{{$item->comentario}} <br> <button class="btn"><ion-icon name="create-outline"></ion-icon></button></td>
+            <td class="t">{{$item->comenta1}} <br> <button class="btn"><ion-icon name="create-outline"></ion-icon></button></td>
             <td class="t">
 
          
@@ -79,13 +79,13 @@
       </div>
       <div class="modal-body">
         <div>
-            <input type="text" class="form-control" name="reparacion" placeholder="Reparación">
+            <input type="text" class="form-control" name="reparacion" value="{{$item->reparacion}}">
             <br>
-            <input type="text" class="form-control" name="monto" placeholder="Monto">
+            <input type="text" class="form-control" name="monto" value="{{$item->monto}}">
             <br>
-            <input type="text" name="concepto" class="form-control" placeholder="Concepto">
+            <input type="text" name="concepto" class="form-control" value="{{$item->concepto}}">
             <br>
-            <input type="text" class="form-control" name="comenta" placeholder="Comentario">
+            <input type="text" class="form-control" name="comenta" value="{{$item->comenta2}}">
         </div>
       </div>
       <div class="modal-footer">
