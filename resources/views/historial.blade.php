@@ -41,7 +41,7 @@
         <thead>
           <tr style="border-bottom: 2mm solid #ffc107 !important;">
             <th style="border-left: transparent !important;" class="t">ID</th>
-            <th class="t">$historial->placa</th>
+            <th class="t">Placa</th>
             <th class="t">Entrada</th>
             <th class="t">Salida</th>
             <th class="t">Trabajo Realizado</th>

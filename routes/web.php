@@ -24,6 +24,8 @@ Route::post('/vehiculo/store', [vehiculoController::class, 'store'])->name('vehi
 Route::get('/editar', [HistorialesvController::class, 'index'])->name('hist1.index');
 Route::get('/cliente', [ClienteController::class, 'index'])->name('Cliente.index');
 Route::post('/cliente/store', [ClienteController::class, 'store'])->name('Cliente.add');
+Route::post('/cliente/salida', [ClienteController::class, 'salida'])->name('Cliente.salida');
+
 
 Route::post('/historial/store', [historialesvController::class, 'store'])->name('historial.store');
 Route::post('/historial/salida', [historialesvController::class, 'salida'])->name('historial.salida');
