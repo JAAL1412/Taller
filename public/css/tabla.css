@@ -17,7 +17,7 @@ thead th
 {
 position: sticky;
 top: 0;
-background-color: black;
+    background-color: #2c0c00e6;
 font-size: 15px;
 padding: 10px 20px;
 word-break: break-all;
