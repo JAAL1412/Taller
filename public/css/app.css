@@ -11,8 +11,10 @@
     padding: 20px;
     }
 .title{
-        text-align: center;
-        color: #ffc107;
+    background-color: #2c0c00;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffc107;
 
     }
     .form-label{

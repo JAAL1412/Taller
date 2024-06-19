@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\cliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClienteController extends Controller
 {
@@ -12,25 +13,14 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        $cliente=cliente::all();
-        $clientes = DB::select("SELECT id, nombre, apellido, documento, fecha_nacimiento, direccion, telefono, correo, comentario FROM clientes"); 
-        return view('clientes', ['cliente' => $clientes]);    }
+        $cliente=DB::select('SELECT * from clientes order by id desc');
+        return view('clientes', compact('cliente'));    }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function salida()
+    public function salida( Request $request)
     {
-        $id=$request->post('id');
-        $cliente->nombre= $request->post('monto');
-        $cliente->apellido= $request->post('apellido');
-        $cliente->documento=$request->post('documento');
-        $cliente->fecha_nacimiento=$request->post('fecha_nacimiento');
-        $cliente->direccion= $request->post('direccion');
-        $cliente->telefono=$request->post('telefono');
-        $cliente->correo=$request->post('correo');
-        $cliente->comentario=$request->post('comentario');
-        $cliente->save();
     }
 
     /**
@@ -42,14 +32,13 @@ class ClienteController extends Controller
         $cliente->nombre = $request->post('nombre');
         $cliente->apellido = $request->post('apellido');
         $cliente->documento = $request->post('documento');
-        $cliente->fecha_nacimiento = $request->post('fecha_nacimiento');
         $cliente->direccion = $request->post('direccion');
         $cliente->telefono= $request->post('telefono');
         $cliente->correo= $request->post('correo');
         $cliente->comentario= $request->post('comentario');
         $cliente->save();
         
-        return view('clientes');
+        return back();
 
 
     }
