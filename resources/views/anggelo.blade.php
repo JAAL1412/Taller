@@ -19,7 +19,7 @@ style>
           <input type="text" class="form-control" placeholder="Insertar Modelo" name="modelo" required />
           <br>
           <label class="form-label">Año de fabricacion</label>
-          <input type="text" class="form-control" placeholder="Insertar Año Fabricacion" name= "fecha_fabri"required />
+          <input type="text" class="form-control" placeholder="Insertar fecha usando formato AAAA-MM-DD" name= "fecha_fabri"required />
           <br>
           <label class="form-label">País</label>
           <input type="text" class="form-control" placeholder="Insertar pais" name="pais" required />
