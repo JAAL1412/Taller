@@ -62,19 +62,50 @@
             <td class="t">
 
 
-            <button class="btn"><ion-icon name="create-outline"></ion-icon></button>
+            <button class="btn"  style="background-color: red;" data-bs-toggle="modal" data-bs-target="#{{$item->id}}1">
+              <ion-icon name="create-outline">editar</ion-icon>       
+            </button>
 
+            <form action="{{route('historial.salida')}}" method="POST">
+              @csrf
+              <div class="modal fade"  id="{{$item->id}}2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                <div class="modal-dialog" >
+                  <div class="modal-content" style="background-color: black;">
+                    <div class="modal-header" style="border-bottom: .5mm solid #ffc107;">
+                      <h1 class="modal-title fs-5" id="{{$item->id}}1Label">
+                        Ingrese los nuevos datos
+                      </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div>
+                        <input type="text" class="form-control" name="reparacion" value="{{$item->reparacion}}">
+                        <br>
+                        <input type="text" class="form-control" name="monto" value="{{$item->monto}}">
+                        <br>
+                        <input type="text" name="concepto" class="form-control" value="{{$item->concepto}}">
+                        <br>
+                        <input type="text" class="form-control" name="comenta" value="{{$item->comenta2}}">
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn col col-md-4" type="submit"  name="id"value="{{$item->id}}1">Agregar</button>  
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
 
-              <button class="btn" style="background-color: red;" data-bs-toggle="modal" data-bs-target="#{{$item->id}}">
+              <button class="btn" style="background-color: red;" data-bs-toggle="modal" data-bs-target="#{{$item->id}}2">
                 <ion-icon name="log-out-outline"></ion-icon>
               </button>
 <form action="{{route('historial.salida')}}" method="POST">
               @csrf
-              <div class="modal fade"  id="{{$item->id}}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+              <div class="modal fade"  id="{{$item->id}}2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog" >
     <div class="modal-content" style="background-color: black;">
       <div class="modal-header" style="border-bottom: .5mm solid #ffc107;">
-        <h1 class="modal-title fs-5" id="{{$item->id}}Label">
+        <h1 class="modal-title fs-5" id="{{$item->id}}2Label">
           Ingrese Reparación realizada y  Monto cobrado
         </h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
