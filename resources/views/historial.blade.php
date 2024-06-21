@@ -79,17 +79,17 @@
                     </div>
                     <div class="modal-body">
                       <div>
+                        <input type="text" class="form-control" name="idhistorial" value="{{$item->idhistorial}}">
+                        <br>
                         <input type="text" class="form-control" name="reparacion" value="{{$item->reparacion}}">
                         <br>
-                        <input type="text" class="form-control" name="monto" value="{{$item->monto}}">
+                        <input type="text" name="idtransaccion" class="form-control" value="{{$item->idtransaccion}}">
                         <br>
-                        <input type="text" name="concepto" class="form-control" value="{{$item->concepto}}">
-                        <br>
-                        <input type="text" class="form-control" name="comenta" value="{{$item->comenta2}}">
+                        <input type="text" class="form-control" name="comentario" value="{{$item->comentario}}">
                       </div>
                     </div>
                     <div class="modal-footer">
-                      <button class="btn col col-md-4" type="submit"  name="id"value="{{$item->id}}1">Agregar</button>  
+                      <button class="btn col col-md-4" type="submit"  name="id"value="{{$item->id}}1">Editar</button>  
                     </div>
                   </div>
                 </div>
