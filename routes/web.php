@@ -17,6 +17,7 @@ Route::post('/', [UserController::class, 'verifica'])->name('Users.verifica');
 
 Route::post('/busca', [vehiculoController::class, 'index'])->name('vehiculo.index');
 Route::get('/busca/edit/{id}', [vehiculoController::class, 'show'])->name('vehiculo.edit');
+Route::get('/busca/{placav}', [vehiculoController::class, 'search'])->name('vehiculo.busqueda');
 Route::post('/busca/edit/{id}', [vehiculoController::class, 'update'])->name('vehiculo.up');
 Route::get('/formularios', [vehiculoController::class, 'create'])->name('form.index');
 Route::post('/vehiculo/store', [vehiculoController::class, 'store'])->name('vehiculo.add');

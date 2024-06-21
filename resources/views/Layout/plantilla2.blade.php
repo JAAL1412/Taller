@@ -20,57 +20,6 @@
            <h2>Taller Mister Mecánico</h2>
             </a> 
         </div>
-        <style>
-            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-            *{
-                font-family: "Poppins", sans-serif;
-            }
-            .bo{
-
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-            .navb{
-            padding: 10px;
-            color:#2c0c00;
-            border-radius:10px; 
-            border:#2c0c00 2px solid;
-            font-size: 5mm;
-            margin: 10px;
-        }
-        .navb:hover{
-            color:#ffc107;  
-            background-color: #2c0c00;;
-        }
-            .form-control{
-            background-color: transparent;
-            border:1px solid #ffc107;
-            color: #ffc107;
-        }
-        .form-control::placeholder{
-            color: #ffc107;
-        }
-        .form-control:active{
-            background-color:transparent;
-            border:2px solid #ffc107;
-        }
-        .input-group-text{
-            background-color: transparent;
-            border-color: transparent;
-        }
-        .btn{
-        margin: 10px;
-        background-color: #ffc107;
-        color:#2c0c00 ;
-        border: 1mm solid #2c0c00;
-    }
-.btn:hover{
-        margin: 10px;
-        background-color: #2c0c00;
-        color:#ffc107;
-        border: 1mm solid #2c0c00;
-    }
-        </style>
         <div class="collapse navbar-collapse  d-flex" id="navbarSupportedContent">
         <a href="{{route('form.index')}}"class=" nav-link navb" >
                Vehículos

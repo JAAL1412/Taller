@@ -1,9 +1,30 @@
-
+/*Fondo y fuente*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 .bo{
     background-image: url(./img/personal.jpg);
     background-repeat: no-repeat;
     background-size: cover;
    }
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* Navbar*/
+.navb{
+    padding: 10px !important;
+    color:#2c0c00 !important;
+    border-radius:10px; 
+    border:#2c0c00 2px solid !important;
+    font-size: 5mm !important;
+    margin: 10px;
+}
+.navb:hover{
+    color:#ffc107 !important;  
+    background-color: #2c0c00;;
+}
+
+/*Contenido*/
 .container{
     background-color: #2c0c00e6;
     margin-top: 30px;
@@ -14,35 +35,47 @@
     border-radius: 10px;
     text-align: center;
     color: #ffc107;
-
-    }
-    .form-label{
-        color: #ffc107;
-        max-width: 30%;
     }
 
-    form{
-        text-align: center;
+/*Formularios*/
+form{
+    text-align: center;
     }
-    .btn:hover{
+.form-control{
+    background-color: transparent !important;
+    border:1px solid #ffc107 !important;
+    color: #ffc107 !important;
+}
+.form-label{
+    color: #ffc107;
+    max-width: 30%;
+    }
+.form-control::placeholder{
+    color: #ffc107 !important;
+    }
+
+.input-group-text{
+        background-color: transparent !important;
+        border-color: transparent !important;
+    }
+.btn:hover{
         margin: 10px;
-        background-color: #2c0c00;
-        color:#ffc107;
+        background-color: #2c0c00 !important;
+        color:#ffc107 !important;
         border: 1mm solid #2c0c00;
     }
 .btn{
         margin: 10px;
-        background-color: #ffc107;
-        color:#2c0c00 ;
-        border: 1mm solid #2c0c00;
-    } 
-.btn:hover{
-        margin: 10px;
-        background-color: #2c0c00;
-        color:#ffc107;
+        background-color: #ffc107 !important;
+        color:#2c0c00 !important;
         border: 1mm solid #2c0c00;
     }
 .input-group-text{
         background-color: transparent;
         border-color:transparent;
+}
+
+.aplaca{
+    text-decoration: none;
+    color: #ffc107;
 }

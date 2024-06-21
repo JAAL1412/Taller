@@ -35,8 +35,6 @@
 </div>
 </form>
 
-<!--   -->
-
 <table>
         <thead>
           <tr style="border-bottom: 2mm solid #ffc107 !important;">
@@ -55,18 +53,22 @@
          
           <tr>
             <td style="border-left:transparent !important;" class="t">{{$item->id}}</td>
-            <td class="t">{{$item->placav}}</td>
+            <td class="t"><a class="aplaca" href="{{route('vehiculo.busqueda', $item->placav )}}" method="GET">{{$item->placav}}</a>
+              </td>
             <td class="t">{{$item->ingreso}}</td>
             <td class="t">{{$item->salida}}</td>
             <td class="t">{{$item->reparacion}}</td>
-            <td class="t">{{$item->comenta1}} <br> <button class="btn"><ion-icon name="create-outline"></ion-icon></button></td>
+            <td class="t">{{$item->comenta1}} <br> </td>
             <td class="t">
 
-         
+
+            <button class="btn"><ion-icon name="create-outline"></ion-icon></button>
+
+
               <button class="btn" style="background-color: red;" data-bs-toggle="modal" data-bs-target="#{{$item->id}}">
                 <ion-icon name="log-out-outline"></ion-icon>
               </button>
-              <form action="{{route('historial.salida')}}" method="POST">
+<form action="{{route('historial.salida')}}" method="POST">
               @csrf
               <div class="modal fade"  id="{{$item->id}}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog" >
