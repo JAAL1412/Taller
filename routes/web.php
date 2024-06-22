@@ -31,3 +31,5 @@ Route::post('/cliente/update', [ClienteController::class, 'update'])->name('Clie
 Route::get('/historial', [HistorialesvController::class, 'index'])->name('historial.index');
 Route::post('/historial/store', [historialesvController::class, 'store'])->name('historial.store');
 Route::post('/historial/salida', [historialesvController::class, 'salida'])->name('historial.salida');
+
+Route::post('/historialr/salida', [HistorialrController::class, 'salida'])->name('historialr.salida');

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\historialr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class HistorialrController extends Controller
 {
@@ -12,8 +14,10 @@ class HistorialrController extends Controller
      */
     public function index()
     {
-        //
+        $historialr=DB::select('SELECT * from historialrs order by id desc');
+        return view('historial', compact('historial'));   
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -26,9 +30,12 @@ class HistorialrController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function salida(Request $request)
     {
-        //
+        $id=$request->post('id');
+        DB::table('historialrs')->where('idhistorial', $id)
+        ->update(['reparacion'=> $request->post('reparacion'), 'comentario'=>$request->post('comentario')]);
+        return back();
     }
 
     /**
@@ -50,15 +57,10 @@ class HistorialrController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, historialr $historialr)
-    {
-        //
-    }
-
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(historialr $historialr)
+    public function destroy(transaccion $transaccion)
     {
         //
     }

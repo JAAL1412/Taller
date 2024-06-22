@@ -66,30 +66,26 @@
               <ion-icon name="create-outline">editar</ion-icon>       
             </button>
 
-            <form action="{{route('historial.salida')}}" method="POST">
+            <form action="{{route('historialr.salida')}}" method="POST">
               @csrf
-              <div class="modal fade"  id="{{$item->id}}2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+              <div class="modal fade"  id="{{$item->id}}1" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                 <div class="modal-dialog" >
                   <div class="modal-content" style="background-color: black;">
                     <div class="modal-header" style="border-bottom: .5mm solid #ffc107;">
-                      <h1 class="modal-title fs-5" id="{{$item->id}}1Label">
+                      <h1 class="modal-title fs-5" id="{{$item->id}}1">
                         Ingrese los nuevos datos
                       </h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <div>
-                        <input type="text" class="form-control" name="idhistorial" value="{{$item->idhistorial}}">
-                        <br>
-                        <input type="text" class="form-control" name="reparacion" value="{{$item->reparacion}}">
-                        <br>
-                        <input type="text" name="idtransaccion" class="form-control" value="{{$item->idtransaccion}}">
-                        <br>
-                        <input type="text" class="form-control" name="comentario" value="{{$item->comentario}}">
-                      </div>
+                    <div>
+            <input type="text" class="form-control" name="reparacion" value="{{$item->reparacion}}">
+            <br>
+            <input type="text" class="form-control" name="comentario" value="{{$item->comenta2}}">
+        </div>
                     </div>
                     <div class="modal-footer">
-                      <button class="btn col col-md-4" type="submit"  name="id"value="{{$item->id}}1">Editar</button>  
+                      <button class="btn col col-md-4" type="submit"  name="id" Value="{{$item->id}}">Editar</button>  
                     </div>
                   </div>
                 </div>
