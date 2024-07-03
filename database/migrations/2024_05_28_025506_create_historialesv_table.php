@@ -17,7 +17,7 @@ return new class extends Migration
             $table->datetime('ingreso');
             $table->datetime('salida');
             $table->timestamps();
-            $table->foreign('placav')->references('placa')->on('vehiculos')->onUpdate('CASCADE');
+            $table->foreign('placav')->references('placa')->on('vehiculos')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('historialesv');
+        Schema::dropIfExists('historialesvs');
     }
 };

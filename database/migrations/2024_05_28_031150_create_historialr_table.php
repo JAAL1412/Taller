@@ -18,8 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('idtransaccion');
             $table->string('comentario');
             $table->timestamps();
-            $table->foreign('idhistorial')->references('id')->on('historialesvs')->onUpdate('CASCADE');
-            $table->foreign('idtransaccion')->references('id')->on('transaccions')->onUpdate('CASCADE');
+            $table->foreign('idhistorial')->references('id')->on('historialesvs')->onUpdate('CASCADE')->onDelete('CASCADE');
+           
         });
     }
     /**
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('historialr');
+        Schema::dropIfExists('historialrs');
     }
 };
