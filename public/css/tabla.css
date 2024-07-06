@@ -5,6 +5,7 @@
 }
 
 table{
+   table-layout: fixed;
    overflow: hidden;
    border-radius: 10px;
    width: 100%;
@@ -17,28 +18,37 @@ thead th
 {
 position: sticky;
 top: 0;
-    background-color: #2c0c00e6;
+background-color: #2c0c00;
 font-size: 15px;
 padding: 10px 20px;
 word-break: break-all;
 text-align: center;
 }
-   .t{
+.t{
    color: #ffc107 !important;
    align-items: center;
    text-align: center;
    border-left: 1mm solid #ffc107 !important;
    text-align: center;
-   background-color: black !important;
+   background-color: #2c0c00 !important;
    color:#ffc107;
-   border-bottom: black !important ;
+   border-bottom: #2c0c00 !important ;
+   word-wrap: break-word;
    }
    tr{
       border-left: transparent !important;
    }
 
 
-
+.modal-content{
+   background-color: #2c0c00 !important;
+}
+.modal-header {
+   border-bottom: .5mm solid #ffc107 !important;
+}
+.modal-footer{
+   border-top: .5mm solid #ffc107 !important;
+}
 
  
 

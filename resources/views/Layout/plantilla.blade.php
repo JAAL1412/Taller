@@ -13,39 +13,6 @@
     <title>@yield('titulo')</title>
   </head>
   <body class="bo">
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-        *{
-            font-family: "Poppins", sans-serif;
-        }
-        .navb{
-            padding: 10px;
-            color:#2c0c00;
-            border-radius:10px; 
-            border:#2c0c00 2px solid;
-            font-size: 5mm;
-            margin: 10px;
-        }
-        .navb:hover{
-            color:#ffc107;  
-            background-color: #2c0c00;;
-        }
-        .form-control{
-            background-color: transparent;
-            border:1px solid #ffc107;
-            color: #ffc107;
-        }
-        .form-control::placeholder{
-            color: #ffc107;
-        }
-        .form-control:active{
-            background-color:transparent;
-            border:2px solid #ffc107;
-        }
-        
-        </style>
-
-
   <header>
     <nav class="navbar navbar-expand-lg bg-warning" >
     <div class=" container-fluid con1 " >
@@ -57,10 +24,10 @@
         @if($mensajes= Session::get('succes'))
         <div class="collapse navbar-collapse  d-flex" id="navbarSupportedContent">
         <a href="{{route('form.index')}}"class=" nav-link navb" >
-               Formulario
+            Vehículos
             </a>
-        <a href="{{route('hist1.index')}}"class="nav-link navb">
-            Editar
+        <a href="{{route('historial.index')}}"class="nav-link navb">
+            Historial
         </a>
         <a href="{{route('Cliente.index')}}"class="nav-link navb">
             Clientes

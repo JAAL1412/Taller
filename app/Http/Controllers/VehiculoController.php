@@ -24,9 +24,8 @@ class VehiculoController extends Controller
             $x=true;
             $xd= $request->post('search');
             $datos=DB::select("SELECT placa, vehiculos.id as vid, nombre,apellido, color, modelo FROM vehiculos, clientes where  clientes.id=vehiculos.dueño and placa='".$xd."' ");
-            $datoh=DB::select("SELECT ingreso, idtransaccion, salida, historialesvs.id, reparacion, monto, transacciones.comentario FROM historialesvs, historialrs, transacciones Where idhistorial=historialesvs.id and transacciones.id=idtransaccion and placav='" .$xd."'");
-            
-            return view('busqueda', compact('datos'),compact('datoh'))->with('x', $x);
+            $datoh=DB::select("SELECT ingreso, idtransaccion, salida, historialesvs.id, reparacion, monto, transaccions.comentario, placav FROM historialesvs LEFT JOIN historialrs ON historialesvs.id = historialrs.idhistorial LEFT JOIN transaccions ON historialrs.idtransaccion = transaccions.id where placav='" .$xd."'");
+            return view('busqueda', compact('datoh','datos'))->with('x', $x);
         }
         
     }
@@ -55,7 +54,7 @@ class VehiculoController extends Controller
 
         $x=true;
         $datos=DB::select("SELECT placa, vehiculos.id as vid, nombre,apellido, color, modelo FROM vehiculos, clientes where  clientes.id=vehiculos.dueño and placa='".$vehiculo->placa."' ");
-        $datoh=DB::select("SELECT ingreso, salida, historialesvs.id, reparacion, monto, transacciones.comentario FROM historialesvs, historialr, transacciones Where placav='" .$vehiculo->placa."'");
+        $datoh=DB::select("SELECT ingreso, salida, historialesvs.id, reparacion, monto, transaccions.comentario FROM historialesvs, historialrs, transaccions Where placav='" .$vehiculo->placa."'");
             
         return view('busqueda', compact('datos'),compact('datoh'))->with('x', $x);
 
@@ -66,17 +65,20 @@ class VehiculoController extends Controller
      */
     public function show($id)
     {
-        $datos= vehiculo::find($id);
+        $datos= DB::table('vehiculos')->where('placa',$id)->first();
         $did= $datos->dueño;
         $dueño= cliente::find($did);
         $dueños= DB::select("SELECT * FROM clientes");
         return view('dimas', compact('datos'), compact('dueños'))->with('dueño', $dueño);
 
     }
-    public function edit(vehiculo $vehiculo)
+    public function search(Request $request, $placav)
     {
+        $x=true;
+        $datos=DB::select("SELECT placa, vehiculos.id as vid, nombre,apellido, color, modelo FROM vehiculos, clientes where  clientes.id=vehiculos.dueño and placa='".$placav."' ");
+        $datoh=DB::select("SELECT ingreso, idtransaccion, salida, historialesvs.id, reparacion, monto, transaccions.comentario, placav FROM historialesvs LEFT JOIN historialrs ON historialesvs.id = historialrs.idhistorial LEFT JOIN transaccions ON historialrs.idtransaccion = transaccions.id where placav='" .$placav."'");
+        return view('busqueda', compact('datos'),compact('datoh'))->with('x', $x);
     }
-
     public function update(Request $request, $id)
     { 
         $x=false;
