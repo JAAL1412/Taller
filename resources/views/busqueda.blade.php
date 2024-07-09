@@ -66,7 +66,11 @@
                         <td style="border-left: transparent !important;" class="t">{{$dato->id}}</td>
                         <td class="t">{{$dato->ingreso}}</td>
                         <td class="t">{{$dato->salida}}</td>
-                        <td class="t">{{$dato->reparacion}}</td>
+                        <td class="t">
+                                <button class="btn" style="background-color: transparent !important; color:#ffc107 !important; border: trnasparent;" data-bs-toggle="modal" data-bs-target="#{{$dato->id}}1">
+                                    {{$dato->reparacion}}
+                                </button>
+                            </td>
                         <td class="t">{{$dato->monto}}</td>
                         <td class="t">{{$dato->comentario}}</td>
                         <td class="t">
@@ -77,6 +81,29 @@
                             </form>
                         </td>
                     </tr>
+                    <div class="modal fade"  id="{{$dato->id}}1" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                <div class="modal-dialog" >
+                  <div class="modal-content" style="background-color: black;">
+                    <div class="modal-header" style="border-bottom: .5mm solid #ffc107;">
+                      <h1 class="modal-title fs-5" id="{{$dato->id}}1">
+                        Comentario
+                      </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <div> 
+            <label class="form-label">Comentario</label>
+            <br>
+            <input type="text" class="form-control" name="comentario" value="{{$dato->comentario}}">
+        </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn col col-md-4" type="submit"  name="id" Value="{{$dato->id}}1">Editar</button>  
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
                 @endforeach
             </tbody>
         </table>
