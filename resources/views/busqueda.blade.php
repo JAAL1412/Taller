@@ -94,7 +94,7 @@
                     <div> 
             <label class="form-label">Comentario</label>
             <br>
-            <input type="text" class="form-control" name="comentario" value="{{$dato->comentario}}">
+            <input type="text" class="form-control" name="comentario" value="{{$dato->coment}}">
         </div>
                     </div>
                     <div class="modal-footer">
