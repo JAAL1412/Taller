@@ -1,10 +1,10 @@
 /*Fondo y fuente*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 .bo{
-    background-image: url(../css/img/3.png);
+    background-image: url(../css/img/2.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #297373;
+    background-color: #000000;
    }
 *{
     font-family: "Poppins", sans-serif;
