@@ -5,7 +5,7 @@
 <form action="{{route('vehiculo.index')}}" method="POST">
 		@csrf
         <div class="input-group-text mb-3">
-            <input type="text" class="form-control" name="search" placeholder="Placa del vehículo">
+            <input type="text" class="form-control" name="search" placeholder="Modelo del vehiculo">
             <button class="btn" type="sumbmit" name="bt" value=1>Buscar</button>
         </div>
 
@@ -16,13 +16,13 @@
     <section class="container" style="background-color: transparent;">
         <table class="table">
             <thead>
-                <tr style="border-bottom: 1mm solid #ffc107;">
+                <tr style="border-bottom: 1mm solid #ffff;">
                     <th style="border-left: transparent !important;" class="t">ID</th>
                     <th scope="col" class="t">Placa</th>
                     <th scope="col" class="t">Color</th>
                     <th scope="col" class="t">Modelo</th>
                     <th scope="col" class="t">Dueño</th>
-                    <th scope="col" class="t">Acción</th>
+                    <th scope="col" class="t">Editar</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,18 +46,18 @@
         </table>
 
         <table class="table">
-            <h2 class="title" style="border-radius: 10px; background-color:#2c0c00;">
+            <h2 class="title" style="border-radius: 10px; background-color:#212429;">
                 Historial
             </h2>
             <thead>
-                <tr style="border-bottom: 1mm solid #ffc107;">
+                <tr style="border-bottom: 1mm solid #ffff;">
                     <th scope="col" style="border-left: transparent !important;" class="t">Id</th>
                     <th scope="col" class="t">Ingreso</th>
                     <th scope="col" class="t">Salida</th>
                     <th scope="col" class="t">Reparacion</th>
                     <th scope="col" class="t">Monto</th>
+                    <th scope="col" class="t">concepto</th>
                     <th scope="col" class="t">Comentario</th>
-                    <th scope="col" class="t">Acción</th>
                 </tr>
             </thead>
             <tbody>
@@ -67,43 +67,76 @@
                         <td class="t">{{$dato->ingreso}}</td>
                         <td class="t">{{$dato->salida}}</td>
                         <td class="t">
-                                <button class="btn" style="background-color: transparent !important; color:#ffc107 !important; border: trnasparent;" data-bs-toggle="modal" data-bs-target="#{{$dato->id}}1">
+                                <button class="btn" style="background-color: transparent !important; color:#FE0000 !important; border: trnasparent;" data-bs-toggle="modal" data-bs-target="#{{$dato->id}}1">
                                     {{$dato->reparacion}}
                                 </button>
                             </td>
                         <td class="t">{{$dato->monto}}</td>
-                        <td class="t">{{$dato->comentario}}</td>
+                        <td class="t">{{$dato->concepto}}</td>
                         <td class="t">
-                            <form action="{{route('vehiculo.edit', $dato->placav)}}" method="GET">
-                                <button class="btn btn-warning btn-sm">
-                                    <ion-icon name="create-outline"></ion-icon>
+                        <button class="btn" style="background-color: transparent !important; color:#FE0000 !important; border: trnasparent;" data-bs-toggle="modal" data-bs-target="#{{$dato->id}}">
+                                    {{$dato->comentario}}
                                 </button>
-                            </form>
                         </td>
                     </tr>
                     <div class="modal fade"  id="{{$dato->id}}1" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                 <div class="modal-dialog" >
                   <div class="modal-content" style="background-color: black;">
                     <div class="modal-header" style="border-bottom: .5mm solid #ffc107;">
-                      <h1 class="modal-title fs-5" id="{{$dato->id}}1">
-                        Comentario
+                      <h1 class="modal-title title fs-5" id="{{$dato->id}}1">
+                        Editar
                       </h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                    <div> 
-            <label class="form-label">Comentario</label>
-            <br>
-            <input type="text" class="form-control" name="comentario" value="{{$dato->coment}}">
-        </div>
+                    @if($dato->reparacion==null)
+                    <h2 class="title">Se debe agregar una salida primero</h2>
+                    @else
+
+                    <form action="{{route('historialr.salida')}}" method="POST">
+                        <div class="modal-body">
+                    @csrf
+                        <div> 
+                            <label class="form-label">Comentario</label>
+                            <br>
+                            <input type="text" class="form-control" name="comentario" value="{{$dato->coment}}">
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                      <button class="btn col col-md-4" type="submit"  name="id" Value="{{$dato->id}}1">Editar</button>  
-                    </div>
+                        <div class="modal-footer">
+                            <button class="btn col col-md-4" type="submit"  name="id" Value="{{$dato->id}}">Editar</button>  
+                        </div>
+                    </form>
+                    @endif
+
+
                   </div>
                 </div>
               </div>
-                
+              <div class="modal fade"  id="{{$dato->id}}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                <div class="modal-dialog" >
+                  <div class="modal-content" style="background-color: black;">
+                    <div class="modal-header" style="border-bottom: .5mm solid #ffc107;">
+                      <h1 class="modal-title title fs-5" id="{{$dato->id}}">
+                        Editar
+                      </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                        <div class="modal-body">
+                    <form action="{{route('transacciones.up')}}" method="POST">
+                        @csrf
+                            <div> 
+                                <label class="form-label">Comentario</label>
+                                <br>
+                                <input type="text" class="form-control" name="coment" value="{{$dato->comentario}}">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn col col-md-4" type="submit"  name="idt" Value="{{$dato->idt}}">Editar</button>  
+                        </div>
+                    </form>
+
+
+                  </div>
+                </div>
                 @endforeach
             </tbody>
         </table>

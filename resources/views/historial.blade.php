@@ -30,6 +30,7 @@
       </div>
       <div class="modal-footer">
         <button class="btn col col-md-4" type="submit">Agregar</button>  
+        <a href="{{route('form.index')}}" class="btn"> Nuveo vehiculo</a>
       </div>
     </div>
   </div>
@@ -38,7 +39,7 @@
 
 <table>
         <thead>
-          <tr style="border-bottom: 2mm solid #ffc107 !important;">
+          <tr style="border-bottom: 2mm solid #ffffff !important;">
             <th style="border-left: transparent !important;" class="t">ID</th>
             <th class="t">Placa</th>
             <th class="t">Entrada</th>
@@ -61,44 +62,9 @@
             <td class="t">{{$item->reparacion}}</td>
             <td class="t">{{$item->comenta1}} <br> </td>
             <td class="t">
-
-
-            <button class="btn"  style="background-color: red;" data-bs-toggle="modal" data-bs-target="#{{$item->id}}1">
-              <ion-icon name="create-outline">editar</ion-icon>       
-            </button> 
             <button class="btn" style="background-color: red;" data-bs-toggle="modal" data-bs-target="#{{$item->id}}2">
                 <ion-icon name="log-out-outline"></ion-icon>
               </button>
-
-            <form action="{{route('historialr.salida')}}" method="POST">
-              @csrf
-              <div class="modal fade"  id="{{$item->id}}1" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                <div class="modal-dialog" >
-                  <div class="modal-content" style="background-color: black;">
-                    <div class="modal-header" style="border-bottom: .5mm solid #ffc107;">
-                      <h1 class="modal-title fs-5" id="{{$item->id}}1">
-                        Ingrese los nuevos datos
-                      </h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    <div> 
-            <label class="form-label">Reparación realizada</label>
-            <br>
-            <input type="text" class="form-control" name="reparacion" value="{{$item->reparacion}}">
-            <br>
-            <label class="form-label">Comentario</label>
-            <br>
-            <input type="text" class="form-control" name="comentario" value="{{$item->comenta1}}">
-        </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button class="btn col col-md-4" type="submit"  name="id" Value="{{$item->id}}">Editar</button>  
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
 
              
 <form action="{{route('historial.salida')}}" method="POST">
@@ -115,16 +81,16 @@
       <div class="modal-body">
         <div>
         <label class="form-label">Reparación</label><br>
-            <input type="text" class="form-control" name="reparacion" value="{{$item->reparacion}}">
+            <input type="text" class="form-control" name="reparacion" value="{{$item->reparacion}}" required>
             <br>
             <label class="form-label">Monto</label><br>
-            <input type="text" class="form-control" name="monto" value="{{$item->monto}}">
+            <input type="number" class="form-control" name="monto" value="{{$item->monto}}" required>
             <br>
             <label class="form-label">Concepto</label><br>
-            <input type="text" name="concepto" class="form-control" value="{{$item->concepto}}">
+            <input type="text" name="concepto" class="form-control" value="{{$item->concepto}}" required>
             <br>
             <label class="form-label">Comentario</label><br>        
-            <input type="text" class="form-control" name="comenta" value="{{$item->comenta2}}">
+            <input type="text" class="form-control" name="comenta" value="{{$item->comenta2}}" required>
         </div>
       </div>
       <div class="modal-footer">

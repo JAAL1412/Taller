@@ -21,11 +21,13 @@ class UserController extends Controller
     public function verifica(Request $request)
     { 
         $name=$request->post('User');
-        $mensaje=true;
         $datos= User::find($name);
-        if($request->post('Contra')==$datos->password){
-            return redirect()->route('Users.index')->with('succes',$mensaje);
-        }
-        return redirect()->route('Users.index');
+        if($datos!=null){
+            if($request->post('Contra')==$datos->password){
+            return redirect()->route('historial.index');
+            }}
+        
+            $mensaje="Usuario o contraseñña errado";
+        return back()->with('error',$mensaje);
     }
 }

@@ -12,11 +12,6 @@ class HistorialrController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $historialr=DB::select('SELECT * from historialrs order by id desc');
-        return view('historial', compact('historial'));   
-    }
     
 
     /**
@@ -34,16 +29,8 @@ class HistorialrController extends Controller
     {
         $id=$request->post('id');
         DB::table('historialrs')->where('idhistorial', $id)
-        ->update(['reparacion'=> $request->post('reparacion'), 'comentario'=>$request->post('comentario')]);
+        ->update(['comentario'=>$request->post('comentario')]);
         return back();
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(historialr $historialr)
-    {
-        //
     }
 
     /**

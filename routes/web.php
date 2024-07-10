@@ -33,3 +33,5 @@ Route::post('/historial/store', [historialesvController::class, 'store'])->name(
 Route::post('/historial/salida', [historialesvController::class, 'salida'])->name('historial.salida');
 
 Route::post('/historialr/salida', [HistorialrController::class, 'salida'])->name('historialr.salida');
+
+Route::post('/transaccion/comentario', [TransaccionController::class, 'update'])->name('transacciones.up');

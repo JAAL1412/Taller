@@ -23,8 +23,8 @@ class VehiculoController extends Controller
         if($f==1 and $request->post('search')!=null){
             $x=true;
             $xd= $request->post('search');
-            $datos=DB::select("SELECT placa, vehiculos.id as vid, nombre,apellido, color, modelo FROM vehiculos, clientes where  clientes.id=vehiculos.dueño and placa='".$xd."' ");
-            $datoh=DB::select("SELECT ingreso, idtransaccion, salida, historialesvs.id, reparacion, monto, transaccions.comentario , placav, historialrs.comentario as coment FROM historialesvs LEFT JOIN historialrs ON historialesvs.id = historialrs.idhistorial LEFT JOIN transaccions ON historialrs.idtransaccion = transaccions.id where placav='" .$xd."'");
+            $datos=DB::select("SELECT placa, vehiculos.id as vid, nombre,apellido, color, modelo FROM vehiculos, clientes where  clientes.id=vehiculos.dueño and modelo like ?",['%'.$xd.'%'] );
+            $datoh=DB::select("SELECT ingreso, idtransaccion, salida, historialesvs.id, transaccions.id as idt ,reparacion, monto, transaccions.comentario , placav, historialrs.comentario as coment, concepto FROM vehiculos LEFT JOIN historialesvs on placav=placa LEFT JOIN historialrs ON historialesvs.id = historialrs.idhistorial LEFT JOIN transaccions ON historialrs.idtransaccion = transaccions.id where modelo like ?",['%'.$xd.'%'] );
             return view('busqueda', compact('datoh','datos'))->with('x', $x);
         }
         
@@ -76,7 +76,7 @@ class VehiculoController extends Controller
     {
         $x=true;
         $datos=DB::select("SELECT placa, vehiculos.id as vid, nombre,apellido, color, modelo FROM vehiculos, clientes where  clientes.id=vehiculos.dueño and placa='".$placav."' ");
-        $datoh=DB::select("SELECT ingreso, idtransaccion, salida, historialesvs.id, reparacion, monto, transaccions.comentario, placav FROM historialesvs LEFT JOIN historialrs ON historialesvs.id = historialrs.idhistorial LEFT JOIN transaccions ON historialrs.idtransaccion = transaccions.id where placav='" .$placav."'");
+        $datoh=DB::select("SELECT ingreso, idtransaccion, salida, historialesvs.id, reparacion, monto, transaccions.comentario, placav, historialrs.comentario as coment, concepto, transaccions.id as idt FROM historialesvs LEFT JOIN historialrs ON historialesvs.id = historialrs.idhistorial LEFT JOIN transaccions ON historialrs.idtransaccion = transaccions.id where placav='" .$placav."'");
         return view('busqueda', compact('datos'),compact('datoh'))->with('x', $x);
     }
     public function update(Request $request, $id)

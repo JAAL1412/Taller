@@ -18,7 +18,7 @@ thead th
 {
 position: sticky;
 top: 0;
-background-color: #2c0c00;
+background-color: #212429;
 font-size: 15px;
 padding: 10px 20px;
 word-break: break-all;
@@ -30,9 +30,9 @@ text-align: center;
    text-align: center;
    border-left: 1mm solid #ffffff !important;
    text-align: center;
-   background-color: #2c0c00 !important;
+   background-color: #212429!important;
    color:#ffffff;
-   border-bottom: #2c0c00 !important ;
+   border-bottom: #212429!important ;
    word-wrap: break-word;
    }
    tr{
@@ -41,7 +41,7 @@ text-align: center;
 
 
 .modal-content{
-   background-color: #2c0c00 !important;
+   background-color: #212429 !important;
 }
 .modal-header {
    border-bottom: .5mm solid #ffffff !important;

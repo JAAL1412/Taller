@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\transaccion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TransaccionController extends Controller
 {
@@ -50,9 +51,11 @@ class TransaccionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, transaccion $transaccion)
+    public function update(Request $request)
     {
-        //
+        DB::table('transaccions')->where('id', $request->post('idt'))
+        ->update(['comentario'=>$request->post('coment')]);
+        return back();
     }
 
     /**

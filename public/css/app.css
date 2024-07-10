@@ -5,6 +5,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #000000;
+    background-attachment: fixed;
+    box-sizing: border-box;
    }
 *{
     font-family: "Poppins", sans-serif;
@@ -36,7 +38,7 @@
 
 .navb:hover{
     color:#ffffff !important;  
-    background-color: #2c0c00;;
+    background-color: #FE0000 ;
 }
 
 /*Contenido*/
@@ -68,22 +70,24 @@ form{
 .form-control::placeholder{
     color: #ffffff !important;
     }
-
+option{
+    color: #000000;
+}
 .input-group-text{
         background-color: transparent !important;
         border-color: transparent !important;
     }
 .btn:hover{
         margin: 10px;
-        background-color: #2c0c00 !important;
-        color:#ffc107 !important;
-        border: 1mm solid #2c0c00;
+        background-color: #212429 !important;
+        color:#FE0000 !important;
+        border: 1mm solid #212429;
     }
 .btn{
         margin: 10px;
         background-color: #FE0000 !important;
         color:#ffffff !important;
-        border: 1mm solid #2c0c00;
+        border: 1mm solid #212429;
     }
 .input-group-text{
         background-color: transparent;
