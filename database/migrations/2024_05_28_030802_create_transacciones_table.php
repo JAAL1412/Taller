@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('transacciones', function (Blueprint $table) {
             $table->id();
             $table->date('fechatransa');
-            $table->integer('monto');
+            $table->float('monto');
             $table->string('concepto');
             $table->string('comentario');
             $table->timestamps();

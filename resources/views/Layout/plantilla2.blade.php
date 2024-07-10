@@ -22,7 +22,7 @@
         <!-- <h2>Taller Mister Mecánico</h2>--->
         </div>
         <div class="collapse navbar-collapse  d-flex" id="navbarSupportedContent">
-        <a href="{{route('form.index')}}"class=" nav-link navb" >
+        <a href="{{route('vehiculo.form')}}"class=" nav-link navb" >
                Vehículos
             </a>
         <a href="{{route('historial.index')}}"class="nav-link navb">

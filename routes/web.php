@@ -19,7 +19,7 @@ Route::post('/busca', [vehiculoController::class, 'index'])->name('vehiculo.inde
 Route::get('/busca/edit/{id}', [vehiculoController::class, 'show'])->name('vehiculo.edit');
 Route::get('/busca/{placav}', [vehiculoController::class, 'search'])->name('vehiculo.busqueda');
 Route::post('/busca/edit/{id}', [vehiculoController::class, 'update'])->name('vehiculo.up');
-Route::get('/formularios', [vehiculoController::class, 'create'])->name('form.index');
+Route::get('/vehiculo', [vehiculoController::class, 'create'])->name('vehiculo.form');
 Route::post('/vehiculo/store', [vehiculoController::class, 'store'])->name('vehiculo.add');
 
 

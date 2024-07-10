@@ -24,23 +24,16 @@ class VehiculoController extends Controller
             $x=true;
             $xd= $request->post('search');
             $datos=DB::select("SELECT placa, vehiculos.id as vid, nombre,apellido, color, modelo FROM vehiculos, clientes where  clientes.id=vehiculos.dueño and modelo like ?",['%'.$xd.'%'] );
-            $datoh=DB::select("SELECT ingreso, idtransaccion, salida, historialesvs.id, transaccions.id as idt ,reparacion, monto, transaccions.comentario , placav, historialrs.comentario as coment, concepto FROM vehiculos LEFT JOIN historialesvs on placav=placa LEFT JOIN historialrs ON historialesvs.id = historialrs.idhistorial LEFT JOIN transaccions ON historialrs.idtransaccion = transaccions.id where modelo like ?",['%'.$xd.'%'] );
+            $datoh=DB::select("SELECT ingreso, idtransaccion, salida, historialesvs.id, transaccions.id as idt ,reparacion, monto, transaccions.comentario , placav, historialrs.comentario as coment, concepto FROM vehiculos LEFT JOIN historialesvs on placav=placa LEFT JOIN historialrs ON historialesvs.id = historialrs.idhistorial LEFT JOIN transaccions ON historialrs.idtransaccion = transaccions.id where modelo like ? order by historialesvs.id desc",['%'.$xd.'%'] );
             return view('busqueda', compact('datoh','datos'))->with('x', $x);
         }
         
     }
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create(Request $request)
     {
         $dueños= DB::select("SELECT * FROM clientes");
-        return view('anggelo' , compact('dueños'));
+        return view('vehiculo' , compact('dueños'));
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $vehiculo = new vehiculo;
@@ -59,24 +52,20 @@ class VehiculoController extends Controller
         return view('busqueda', compact('datos'),compact('datoh'))->with('x', $x);
 
     }
-
-    /**
-     * Display the specified resource.
-     */
     public function show($id)
     {
         $datos= DB::table('vehiculos')->where('placa',$id)->first();
         $did= $datos->dueño;
         $dueño= cliente::find($did);
         $dueños= DB::select("SELECT * FROM clientes");
-        return view('dimas', compact('datos'), compact('dueños'))->with('dueño', $dueño);
+        return view('vehiculoedit', compact('datos'), compact('dueños'))->with('dueño', $dueño);
 
     }
     public function search(Request $request, $placav)
     {
         $x=true;
         $datos=DB::select("SELECT placa, vehiculos.id as vid, nombre,apellido, color, modelo FROM vehiculos, clientes where  clientes.id=vehiculos.dueño and placa='".$placav."' ");
-        $datoh=DB::select("SELECT ingreso, idtransaccion, salida, historialesvs.id, reparacion, monto, transaccions.comentario, placav, historialrs.comentario as coment, concepto, transaccions.id as idt FROM historialesvs LEFT JOIN historialrs ON historialesvs.id = historialrs.idhistorial LEFT JOIN transaccions ON historialrs.idtransaccion = transaccions.id where placav='" .$placav."'");
+        $datoh=DB::select("SELECT ingreso, idtransaccion, salida, historialesvs.id, reparacion, monto, transaccions.comentario, placav, historialrs.comentario as coment, concepto, transaccions.id as idt FROM historialesvs LEFT JOIN historialrs ON historialesvs.id = historialrs.idhistorial LEFT JOIN transaccions ON historialrs.idtransaccion = transaccions.id where placav= ? order by historialesvs.id desc ",["".$placav.""] );
         return view('busqueda', compact('datos'),compact('datoh'))->with('x', $x);
     }
     public function update(Request $request, $id)

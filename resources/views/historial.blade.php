@@ -30,7 +30,7 @@
       </div>
       <div class="modal-footer">
         <button class="btn col col-md-4" type="submit">Agregar</button>  
-        <a href="{{route('form.index')}}" class="btn"> Nuveo vehiculo</a>
+        <a href="{{route('vehiculo.form')}}" class="btn"> Nuveo vehiculo</a>
       </div>
     </div>
   </div>

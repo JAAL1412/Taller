@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('historialrs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('idhistorial');
-            $table->string('reparacion');
-            $table->unsignedBigInteger('idtransaccion');
+            $table->string('reparacion')->nullable();
+            $table->unsignedBigInteger('idtransaccion')->nullable();
             $table->string('comentario');
             $table->timestamps();
             $table->foreign('idhistorial')->references('id')->on('historialesvs')->onUpdate('CASCADE')->onDelete('CASCADE');
