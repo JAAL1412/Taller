@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('placav');
             $table->datetime('ingreso');
-            $table->datetime('salida');
+            $table->datetime('salida')->nullable();
             $table->timestamps();
             $table->foreign('placav')->references('placa')->on('vehiculos')->onUpdate('CASCADE')->onDelete('CASCADE');
         });

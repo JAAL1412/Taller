@@ -19,13 +19,7 @@ class ClienteController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function salida( Request $request)
-    {
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
         $cliente = new cliente;
@@ -41,22 +35,6 @@ class ClienteController extends Controller
         return back();
 
 
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(cliente $cliente)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(cliente $cliente)
-    {
-        //
     }
 
     /**
@@ -76,14 +54,6 @@ class ClienteController extends Controller
             'comentario'=>$request->post('comentario')
         ]);
         return back();
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(cliente $cliente)
-    {
-        //
     }
 }
 

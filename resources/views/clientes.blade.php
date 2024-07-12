@@ -3,12 +3,13 @@
 @section('contenido')
 
 <h1 class="title">Clientes</h1>
+<!-- Formulario de clientes-->
 <form action="{{route('Cliente.add')}}" method="POST">
 		@csrf
      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#Modal">
       Añadir Cliente
     </button>
-
+<!-- Modal con el formulario para agregar-->
 <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -47,6 +48,8 @@
   </div>
 </div>
 </form>
+
+<!--Lista de clientes-->
 <table>
         <thead>
           <tr style="border-bottom: 2mm solid #ffc107 !important;">
@@ -71,12 +74,15 @@
             <td class="t">{{$item->telefono}}</td>
             <td class="t">{{$item->correo}}</td>
             <td class="t">{{$item->comentario}}</td>
+            <!-- boton para editar cliente-->
             <td class="t">
               <button class="btn" style="background-color: red;" data-bs-toggle="modal" data-bs-target="#{{$item->id}}1">
               <ion-icon name="create-outline">
               </button>
+              <!-- Formulario para editar clientes-->
             <form action="{{route('Cliente.up')}}" method="POST">
                 @csrf
+                <!-- Modal con el formulario para editar clientes-->
               <div class="modal fade"  id="{{$item->id}}1" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                 <div class="modal-dialog" >
                   <div class="modal-content">

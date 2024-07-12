@@ -4,6 +4,7 @@
 <div class="row">
     <div class="col-md-10 form1" style="margin: auto;">
         
+    <!-- Formulario para agregar un vehículo-->
     <form action="{{route('vehiculo.add')}}" class="form" method="post">
     @csrf 
         <h3 class="title">Agregar información del vehiculo </h3>
@@ -15,6 +16,8 @@
             <option value="{{$item->id}}">{{$item->nombre}}{{$item->apellido}}</option>
             @endforeach
             </select>
+
+            <!-- Ir a añadir una nuevo cliente-->
             <a href="{{route('Cliente.index')}}" class="btn">¿Nuevo Cliente?</a>
             <br>
           <label class="form-label" name="placa">Placa</label>

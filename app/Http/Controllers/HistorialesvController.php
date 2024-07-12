@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 class HistorialesvController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Mostrar la vista con el historial
      */
     public function index()
     {
@@ -23,7 +23,7 @@ class HistorialesvController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Añadir salida y todo lo que esta representa (añade transaccion y reparación)
      */
     public function salida(Request $request)
     {
@@ -43,7 +43,7 @@ class HistorialesvController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Agregar un ingreso al historial.
      */
     public function store(Request $request)
     {
@@ -56,37 +56,5 @@ class HistorialesvController extends Controller
         $reparacion->comentario= $request->post('comentario');
         $reparacion->save();
         return back();
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(historialesv $historialesv)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(historialesv $historialesv)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, historialesv $historialesv)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(historialesv $historialesv)
-    {
-        //
     }
 }

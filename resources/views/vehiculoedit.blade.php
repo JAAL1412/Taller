@@ -4,6 +4,7 @@
 <div class="row">
     <div class="col-md-10 form1" style="margin: auto;">
 
+    <!-- Formulario para Editar vehiculos-->
 <form action="{{route('vehiculo.up', $datos->id)}}" class="form" method="post">
     @csrf 
         <h3 class="title">Editar información del vehiculo </h3>

@@ -1,13 +1,14 @@
 @extends('Layout/plantilla2')
 @section('titulo', 'historial')
 @section('contenido')
-
+<!-- Formulario para agregar entrada-->
 <form action="{{route('historial.store')}}" method="POST">
 		@csrf
      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#Modal">
       Añadir Entrada
     </button>
 
+<!-- Modal con el formulario de entrada-->
 <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -37,6 +38,7 @@
 </div>
 </form>
 
+<!-- Tabla del historial-->
 <table>
         <thead>
           <tr style="border-bottom: 2mm solid #ffffff !important;">
@@ -51,10 +53,14 @@
           </tr>
         </thead>
         <tbody>
+
+          <!-- For para llenar tabla -->
           @foreach($historial as $item)
          
           <tr>
             <td style="border-left:transparent !important;" class="t">{{$item->id}}</td>
+
+            <!-- Link de busqueda por placa-->
             <td class="t"><a class="aplaca" href="{{route('vehiculo.busqueda', $item->placav )}}" method="GET">{{$item->placav}}</a>
               </td>
             <td class="t">{{$item->ingreso}}</td>
@@ -62,11 +68,13 @@
             <td class="t">{{$item->reparacion}}</td>
             <td class="t">{{$item->comenta1}} <br> </td>
             <td class="t">
+            
+            <!-- Boton para añadir salida-->
             <button class="btn" style="background-color: red;" data-bs-toggle="modal" data-bs-target="#{{$item->id}}2">
                 <ion-icon name="log-out-outline"></ion-icon>
               </button>
 
-             
+            <!-- Modal con formulario para añadir salida-->
 <form action="{{route('historial.salida')}}" method="POST">
               @csrf
               <div class="modal fade"  id="{{$item->id}}2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -74,7 +82,7 @@
     <div class="modal-content" style="background-color: black;">
       <div class="modal-header" style="border-bottom: .5mm solid #ffc107;">
         <h1 class="modal-title fs-5" id="{{$item->id}}2Label">
-          Ingrese Reparación realizada y  Monto cobrado
+          Añadir salida
         </h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>

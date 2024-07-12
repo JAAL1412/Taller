@@ -2,6 +2,7 @@
 @section('titulo', 'Inicio de sesión')
 @section('contenido')
 
+<!-- Formulario de incio de sesión-->
 <div class="row">
     <div class="col-md-10 form1" style="margin: auto;">
    
