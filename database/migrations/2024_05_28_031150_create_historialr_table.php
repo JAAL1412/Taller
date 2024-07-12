@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('comentario');
             $table->timestamps();
             $table->foreign('idhistorial')->references('id')->on('historialesvs')->onUpdate('CASCADE')->onDelete('CASCADE');
-           
+            $table->foreign('idtransaccion')->references('id')->on('transaccions')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
     /**
